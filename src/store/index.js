@@ -1,4 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { populateStoreMarvel } from './middlewares';
 import reducers from '../reducers';
@@ -15,6 +16,7 @@ const configureStore = (initialState, config) =>
     initialState,
     compose(
       applyMiddleware(
+        thunk,
         populateStoreMarvel(config),
         logger,
       )));

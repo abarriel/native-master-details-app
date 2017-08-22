@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
+import characters from './characters';
 
 const reducer = combineReducers({
-  todos,
+  characters,
 });
 
 export default reducer;

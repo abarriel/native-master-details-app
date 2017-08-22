@@ -7,11 +7,7 @@ export const LOAD_CHARACTERS = 'LOAD_CHARACTERS';
 const loadCharactersSuccess = (characters) => ({ type: CHARACTERS_LOADED, payload: characters });
 
 export const loadCharacters = (dispatch) => {
-  const ts = Math.round(+new Date() / 1000);
-  console.log(`${baseURL}${charactersURL}`);
-  console.log('hash =', getHashMd5(ts));
-  console.log('apikey=', apiPublic);
-  console.log('ts=', ts);
+  const ts = Math.round(new Date() / 1000);
   axios({
     method: 'get',
     url: `${baseURL}${charactersURL}`,
@@ -20,10 +16,8 @@ export const loadCharacters = (dispatch) => {
       ts,
       hash: getHashMd5(ts),
     },
-  }).then(res => {
-    console.log('ok');
-    console.log(res);
-    dispatch(loadCharactersSuccess);
+  }).then(({ data: { data: { results } } }) => {
+    dispatch(loadCharactersSuccess(results));
   }).catch(err => {
     console.log('AXIOS CATCH ERROR', err);
   });

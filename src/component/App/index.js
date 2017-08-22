@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   header: {
     justifyContent: 'center',
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   h1: {
     color: 'rgba(255, 255, 255, 0.3)',
@@ -28,7 +28,6 @@ console.log('Started Log');
 const App = () => { // eslint-disable-line 
   const handleKeyPress = (e) => {
     // if (key === 'Enter' && value) {
-      console.log('v', e);
   }
 
   return (
