@@ -19,6 +19,6 @@ export const loadCharacters = (dispatch) => {
   }).then(({ data: { data: { results } } }) => {
     dispatch(loadCharactersSuccess(results));
   }).catch(err => {
-    console.log('AXIOS CATCH ERROR', err);
+    console.log(err);
   });
 };

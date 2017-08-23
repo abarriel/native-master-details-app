@@ -1,5 +1,7 @@
 import { createSelector } from 'reselect';
 
-const getStateTodos = state => state;
+const getStatus = state => state.status;
+const getCharactersState = state => state.characters;
 
-export const getVisibleTodos = createSelector([getStateTodos], state => state);
+export const getFetchingState = createSelector([getStatus], state => state.isFetching);
+export const getCharacters = createSelector([getCharactersState], state => state);
