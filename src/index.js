@@ -1,13 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { loadCharacters } from './actions';
-import { LIGHT_GREY } from './style';
+import { BG_COLOR } from './style';
 import configureStore from './store';
 import config from '../config';
 import App from './component/App';
 
 const initialState = {
-  characters: {},
+  characters: {
+    allCharacters: [],
+    singleId: null,
+    singleCharacter: [],
+  },
   status: {
     isFetching: true,
   },
@@ -21,7 +25,7 @@ loadCharacters(store.dispatch);
 
 const Root = () => (
   <Provider store={store}>
-    <App styles={{ flex: 1, backgroundColor: LIGHT_GREY }} />
+    <App style={{ flex: 1, backgroundColor: BG_COLOR }} />
   </Provider>
 );
 
