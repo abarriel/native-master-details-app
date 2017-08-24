@@ -3,9 +3,7 @@ import { baseURL, apiPublic, charactersURL, getHashMd5 } from '../constants';
 
 export const CHARACTERS_LOADED = 'CHARACTERS_LOADED';
 export const LOAD_CHARACTERS = 'LOAD_CHARACTERS';
-export const LOAD_SINGLE_CHARACTER = 'LOAD_SINGLE_CHARACTER';
 
-export const loadSingleCharacter = (id) => ({ type: LOAD_SINGLE_CHARACTER, payload: id });
 const loadCharactersSuccess = (characters) => ({ type: CHARACTERS_LOADED, payload: characters });
 
 export const loadCharacters = (dispatch) => {

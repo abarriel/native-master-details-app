@@ -25,7 +25,7 @@ loadCharacters(store.dispatch);
 
 const Root = () => (
   <Provider store={store}>
-    <App style={{ flex: 1, backgroundColor: BG_COLOR }} />
+    <App />
   </Provider>
 );
 

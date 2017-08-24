@@ -6,18 +6,21 @@ import { centering } from '../../style';
 const styles = StyleSheet.create({
   main: {
     ...centering,
-    padding: 5,
+    padding: 0,
     margin: 7,
     width: 90,
     height: 90,
-    backgroundColor: '#7f8c8d',
-    borderWidth: 1,
+    justifyContent: 'flex-start',
+    backgroundColor: 'red',
+    overflow: 'hidden',
     borderRadius: 5,
     borderColor: '#FF3504',
   },
   title: {
-    color: '#FF3504',
+    color: 'white',
+    marginTop: 2,
     fontSize: 10,
+    fontWeight: 'bold',
     textShadowColor: 'rgba(0, 0, 0, 0.2)',
     textShadowOffset: { width: -1, height: -1 },
   },
@@ -29,7 +32,7 @@ const Characters = ({ character, handlePress }) => {
   return (
     <TouchableOpacity onPress={() => handlePress(character.id)}>
       <View style={styles.main}>
-        <Image source={{ uri }} style={{ width: 70, height: 70 }} />
+        <Image source={{ uri }} style={{ width: 91, height: 72 }} />
         <Text style={styles.title}>{name}</Text>
       </View>
     </TouchableOpacity>);
