@@ -39,5 +39,13 @@
     "jest-expo": "~20.0.0",
     "react-native-scripts": "1.2.1",
     "react-test-renderer": "16.0.0-alpha.12"
+  },
+  "babel": {
+    "presets": ["babel-preset-expo"],
+    "env": {
+      "development": {
+        "plugins": ["transform-react-jsx-source"]
+      }
+    }
   }
 }
