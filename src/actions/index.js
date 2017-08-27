@@ -16,7 +16,6 @@ export const loadCharacters = (dispatch) => {
       ts,
       hash: getHashMd5(ts),
     },
-  }).then(({ data: { data: { results } } }) => {
-    dispatch(loadCharactersSuccess(results));
-  }).catch(err => console.log(err)); // eslint-disable-line no-console
+  }).then(({ data: { data: { results } } }) => dispatch(loadCharactersSuccess(results)))
+    .catch(err => console.error(err)); // eslint-disable-line no-console
 };

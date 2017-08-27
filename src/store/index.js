@@ -9,7 +9,7 @@ const logger = createLogger({
   collapsed: true,
 });
 
-const configureStore = (initialState, config) =>
+const configureStore = (initialState) =>
   createStore(
     reducers,
     initialState,

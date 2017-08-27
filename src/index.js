@@ -2,8 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { loadCharacters } from './actions';
 import configureStore from './store';
-import config from '../config';
-import App from './component/App';
+import Navigator from './navigator';
 
 const initialState = {
   characters: {
@@ -14,13 +13,13 @@ const initialState = {
   },
 };
 
-const store = configureStore(initialState, config);
+const store = configureStore(initialState);
 
 loadCharacters(store.dispatch);
 
 const Root = () => (
   <Provider store={store}>
-    <App />
+    <Navigator />
   </Provider>
 );
 
